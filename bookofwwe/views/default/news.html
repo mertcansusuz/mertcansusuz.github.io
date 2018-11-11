@@ -1,0 +1,34 @@
+{{active="news"}}
+{{title = "News"}}
+{{extend 'my_layout.html'}}
+
+
+
+<table class="news_box" border="2" cellspacing="0" cellpadding="4" style="text-align: center;">
+<tbody>
+
+    <thead>
+	<tr>
+	<th style="background: #e3e3e3;">Latest News</th>
+	<th style="background: #e3e3e3; ">Author</th>
+	<th style="background: #e3e3e3;">Date</th>
+	</tr>
+	</thead>
+
+
+{{for post in posts:}}
+	<tr>
+	<td scope="row">{{=A(post.title,_href=URL("post", "view", args=post.id))}}</td>
+	<td>{{=A(post.author.username,_href=URL("profile", args=post.author.username))}}</td>
+	<td> {{=A(post.post_date)}} </td>
+	</tr>
+{{pass}}
+
+</tbody>
+</table>
+
+<div class="add">
+{{if auth.has_membership(role="editor"):}}
+<a href="{{=URL('post','create', args=post.id)}}">Add new News</a>
+{{pass}}
+</div>

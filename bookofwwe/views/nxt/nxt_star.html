@@ -1,0 +1,51 @@
+
+{{title = "NXT Superstars"}}
+{{extend 'my_layout.html'}}
+
+<h2 style="color:#333333; padding-left: 35px; padding-top: 10px"> {{=nxt_star["ring_name"]}}</h2>
+
+<div class="article">
+
+<img style="margin-right: 50px" align="left" src="{{=URL('download', args=nxt_star.cover)}}" >
+
+<i>
+<b>Real Name: </b>{{=nxt_star["real_name"]}} </br>
+<b>Height: </b> {{=nxt_star["height"]}} </br>
+<b>Weight: </b>{{=nxt_star["weight"]}}  </br>
+<b>Hometown: </b>{{=nxt_star["hometown"]}}  </br>
+<b>Age: </b>{{=nxt_star["age"]}}  </br>
+<b>Achivements: </b>{{=nxt_star["achivements"]}} </br>
+<b>Special Moves: </b>{{=nxt_star["moves"]}} </br>
+<b>Allies: </b>{{=nxt_star["allies"]}} </br>
+<b>Enemies: </b>{{=nxt_star["enemies"]}} </br>
+<b>Enterance Video: </b><br/><video width="300" controls> 
+<source src="{{=URL('download', args=nxt_star.video)}}" type="video/mp4">
+</video>
+</i>
+
+<br/>
+<div class ="edit">
+{{if auth.has_membership(role ="editor"):}}
+<a href="{{=URL('nxt','nxt_edit', args=nxt_star.id)}}">Edit this Star</a>
+{{pass}}
+</div>
+
+
+</div>
+
+<div style="margin-top: 50px;">
+	{{if len(comments):}}
+	  <h2><u>Comments</u></h2><p>
+	  {{for comment in comments:}}
+	    <p><font size="2"> {{=comment.author}} says; <b><i>{{=comment.body}}</i></b></font></p>
+	  {{pass}}</p>
+	{{else:}}
+	  <h2>No comments posted yet about this star</h2>
+	{{pass}}
+
+	{{if auth.is_logged_in():}}
+	<br/><h2><u>Post a comment</u></h2> <br/>
+	{{=form}}
+	{{pass}}
+
+</div>

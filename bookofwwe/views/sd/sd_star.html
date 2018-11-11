@@ -1,0 +1,53 @@
+
+{{title = "Smackdown Superstars"}}
+{{extend 'my_layout.html'}}
+
+
+
+<h2 style="color:#333333; padding-left: 35px; padding-top: 10px"> {{=sd_star["ring_name"]}}</h2>
+
+
+<div class="article">
+
+<img style="margin-right: 50px" align="left" src="{{=URL('download', args=sd_star.cover)}}" >
+
+<i>
+<b>Real Name: </b>{{=sd_star["real_name"]}} </br>
+<b>Height: </b> {{=sd_star["height"]}} </br>
+<b>Weight: </b>{{=sd_star["weight"]}}  </br>
+<b>Hometown: </b>{{=sd_star["hometown"]}}  </br>
+<b>Age: </b>{{=sd_star["age"]}}  </br>
+<b>Achivements: </b>{{=sd_star["achivements"]}} </br>
+<b>Special Moves: </b>{{=sd_star["moves"]}} </br>
+<b>Allies: </b>{{=sd_star["allies"]}} </br>
+<b>Enemies: </b>{{=sd_star["enemies"]}} </br>
+<b>Enterance Video: </b><br/><video width="300" controls> 
+<source src="{{=URL('download', args=sd_star.video)}}" type="video/mp4">
+</video>
+</i>
+
+<br/>
+<div class ="edit">
+{{if auth.has_membership(role ="editor"):}}
+<a href="{{=URL('sd','sd_edit', args=sd_star.id)}}">Edit this Star</a>
+{{pass}}
+</div>
+
+</div>
+
+<div style="margin-top: 50px;">
+	{{if len(comments):}}
+	  <h2><u>Comments</u></h2><p>
+	  {{for comment in comments:}}
+	    <p><font size="2"> {{=comment.author}} says; <b><i>{{=comment.body}}</i></b></font></p>
+	  {{pass}}</p>
+	{{else:}}
+	  <h2>No comments posted yet about this star</h2>
+	{{pass}}
+
+	{{if auth.is_logged_in():}}
+	<br/><h2><u>Post a comment</u></h2> <br/>
+	{{=form}}
+	{{pass}}
+
+</div>

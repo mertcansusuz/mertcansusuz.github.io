@@ -1,0 +1,26 @@
+{{active="stars"}}
+{{title = "Superstars"}}
+{{extend 'my_layout.html'}}
+
+
+{{ prefix = URL("static", "images2") + "/"  }}
+
+<h2 style="padding-left: 10px; padding-top:10px; "> <u>WWE Superstars</u> </h2>
+<div style="text-align: center">
+
+
+<div class = "brand_box" > 
+<h2>
+
+<a href='{{=URL("raw", "raw_stars")}}' >  <img src="{{=prefix}}raw_logo.png">Raw Superstars</img>
+</a>
+
+<a href='{{=URL("sd", "sd_stars")}}' > <img src="{{=prefix}}sd_logo.png">SmackDown Superstars</img>
+</a>
+
+<a href='{{=URL("nxt", "nxt_stars")}}'>  <img src="{{=prefix}}nxt_logo.png">NXT Superstars</img>
+</a>
+
+
+</h2>
+</div>

@@ -1,0 +1,38 @@
+{{extend 'my_layout.html'}}
+
+
+<div class="view_page">
+
+	<h1>{{=post.title}}</h1>
+
+	<div class="post-info">Posted by: {{=author.username}}
+	</div>
+	<br/>
+
+
+	 
+	<h4> {{=post.body}} </h4>
+	<br/>
+	
+
+    
+	{{if auth.user and (author.id == auth.user.id or
+	                    auth.has_membership(role="editor")):}}
+	<a href="{{=URL('post','edit', args=post.id)}}">Edit this post</a>
+
+	{{pass}}
+	{{if len(comments):}}
+	  <h2><u>Comments</u></h2><p>
+	  {{for comment in comments:}}
+	    <p><font size="2"> {{=comment.author}} says; <b><i>{{=comment.body}}</i></b></font></p>
+	  {{pass}}</p>
+	{{else:}}
+	  <h2>No comments posted yet</h2>
+	{{pass}}
+
+	{{if auth.is_logged_in():}}
+	<br/><h2><u>Post a comment</u></h2> <br/>
+	{{=form}}
+	{{pass}}
+    
+</div>
