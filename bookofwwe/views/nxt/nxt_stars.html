@@ -1,0 +1,25 @@
+{{active= "default/stars"}}
+{{title = "RAW Superstars"}}
+{{extend 'my_layout.html'}}
+
+
+<h2 style="padding-left: 10px" > NXT Superstars</h2>
+
+
+{{for star in nxt_superstars:}}
+<div class = "star_box">
+<h4>
+
+  <a href='{{=URL("nxt_star", args=star.id)}}'>  <img style="height:300px;"  src="{{=URL('download', args=star.cover)}}">{{=star['ring_name']}}</img>  </a>
+
+</h4>
+</div>
+
+{{pass}}
+
+
+<div class="add">
+{{if auth.has_membership(role="editor"):}}
+<a href="{{=URL('nxt','nxt_create')}}">Add new NXT Superstar</a>
+{{pass}}
+</div>

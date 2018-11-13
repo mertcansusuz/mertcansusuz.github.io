@@ -1,0 +1,56 @@
+{{active="forum"}}
+{{title = "Forum"}}
+{{extend 'my_layout.html'}}
+{{ prefix = URL("static", "images2") + "/"  }}
+
+
+{{if auth.is_logged_in():}}
+	<h2 style="text-align: center; margin-top: 10px;"> Welcome to Forum Page!<br/>Enjoy! </h2>
+
+	<table class="forum" border="1" cellspacing="0" cellpadding="4" >
+	<tbody>
+
+	    <thead>
+		<tr>
+		<th>Topics</th>
+		<th>Author</th>
+		<th>Date</th>
+		</tr>
+		</thead>
+
+
+	{{for post in forum_posts:}}
+		<tr>
+		<td scope="row">{{=A(post.title,_href=URL("forum", "view", args=post.id))}}</td>
+		<td>{{=A(post.author.username,_href=URL("profile", args=post.author.username))}}</td>
+		<td> {{=A(post.post_date)}} </td>
+		</tr>
+	{{pass}}
+
+	</tbody>
+	</table>
+
+
+	{{if auth.is_logged_in():}}
+	<div class="add">
+	<a href="{{=URL('forum','create', args=post.id)}}">Add a new Topic</a>
+	</div>
+	{{pass}}
+
+
+{{else:}}
+<div style="margin-top: 70px;
+			margin-bottom: 70px;
+			text-align: center;
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 15px;
+			background-image: url('{{=prefix}}logo-wwe.png')"><br/><br/><br/>
+
+	  <h1>Only the members can see the Forum Page!</h1><br/><br/>
+
+	  <h3>If you are a member, please <a href="{{=URL('default', 'user', args='login',vars=dict(_next=request.env.path_info))}}">click here</a> to login!</h3><br/><br/>
+
+	  <h3>Not a member? <a href="{{=URL('default', 'user', args='register',vars=dict(_next=request.env.path_info))}}">click here</a> to create an account!</h3><br/><br/>
+
+</div>
+{{pass}}

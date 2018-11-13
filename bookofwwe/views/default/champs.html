@@ -1,0 +1,36 @@
+{{active="champs"}}
+{{title = "Championships"}}
+{{extend 'my_layout.html'}}
+
+
+<table class="table" border="5" cellspacing="0" cellpadding="4" style="text-align: center;">
+<tbody>
+
+
+	<tr>
+	<th style="background: #e3e3e3;">Current Appearance</th>
+	<th style="background: #e3e3e3;">Championship</th>
+	<th style="background: #e3e3e3;">Champion(s)</th>
+	<th style="background: #e3e3e3;">Defeated</th>
+	<th style="background: #e3e3e3;">Date Won</th>
+	<th style="background: #e3e3e3;">Event</th>
+	</tr>
+
+
+
+
+
+{{for champ in champions:}}
+	<tr>
+	<td><img src="{{=URL('download', args=champ.cover)}}" </img></td>
+	<td>{{=champ["championship"]}}</td>
+	<td style="color: blue;">{{=champ["champion"]}} </td>
+	<td style="color: darkred;">{{=champ["defeated"]}}  </td>
+	<td>{{=champ["date_won"]}} </td>
+	<td > {{=champ["which_event"]}}  </td>
+	</tr>
+{{pass}}
+
+
+</tbody>
+</table>

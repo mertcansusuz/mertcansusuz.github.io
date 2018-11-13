@@ -1,0 +1,182 @@
+{{
+
+title = globals().get("title", "")
+  
+def menu_items2():
+   # active = active or ""
+   active = globals().get("active", "")
+   items = [("index", "Home"), ("about", "About"), ("stars", "Superstars"), 
+            ("champs", "Championships"), ("events", "Events"), ("news", "News"),
+            ("forum", "Forum"), ("history", "History of WWE")]
+   mylist = UL()         
+   for (path, text) in items:
+      href = URL("default", path)
+      if path == active: 
+          new_item= LI(A(text, _href=href, _class="active"))
+          mylist.components.append(new_item)          
+      else:  
+          new_item= LI(A(text, _href=href))
+          mylist.components.append(new_item)          
+          pass
+      pass
+   return mylist          
+}}
+
+{{ prefix = URL("static", "xxx") + "/"  }}
+{{ prefix2 = URL("default","index") + "/"  }}
+{{ prefix3 = URL("static","images2" + "/") }}
+{{ prefix_raw = URL("raw","raw_star") }}
+{{ prefix_sd = URL("sd","sd_star") }}
+{{ prefix_nxt = URL("nxt","nxt_star") }}
+
+<html lang="en" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+	<title>  {{=title}} - bookOfWWE  </title>
+	<link rel="shortcut icon" type="image/x-icon" href="{{=prefix}}css/images/favicon.png" />
+	<link rel="stylesheet" href="{{=prefix}}css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{{=prefix}}css/flexslider.css" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css' />
+	
+	<script src="{{=prefix}}js/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
+		<script src="{{=prefix}}js/modernizr.custom.js"></script>
+	<![endif]-->
+	<script src="{{=prefix}}js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<script src="{{=prefix}}js/functions.js" type="text/javascript"></script>
+</head>
+<body>
+	<!-- wraper -->
+	<div id="wrapper">
+		<!-- shell -->
+		<div class="shell">
+			<!-- container -->
+			<div class="container">
+				<!-- header -->
+				<header id="header">
+					<h1 id="logo"><a href="{{=prefix2}}"></a></h1>
+
+					<!--  BURASI LOGIN OALCAK -->
+					<div class="usermenu">
+					    {{if auth.user:}}
+					    <b>Welcome {{=auth.user.username}}</b>
+					    (<a href="{{=URL('default', 'user', args='logout',
+					                     vars=dict(_next=request.env.path_info))}}">logout</a>)
+					    <br>
+					    					    
+					        {{ if auth.has_membership(role="editor"):}}
+					        <a href="{{=URL('default', 'manage_user')}}">User Management</a>
+					        {{pass}}
+					    {{else:}}
+
+					    <a href="{{=URL('default', 'user', args='login',vars=dict(_next=request.env.path_info))}}">  <img height="40px" weight="40" src="{{=prefix3}}login.png"></img></a>
+
+					    <a href="{{=URL('default', 'user', args='register',vars=dict(_next=request.env.path_info))}}">  <img height="40px" weight="40" src="{{=prefix3}}signup.png"></img></a>
+
+					    
+					    {{pass}} 
+					</div>  
+					<!-- ______END OF LOGIN -->
+
+
+				</header>
+				<!-- end of header -->
+				
+				<!-- navigation -->
+				<nav id="navigation">
+				   {{=menu_items2()}}
+				</nav>
+
+
+
+				<!-- end of navigation -->
+
+<div style="min-height:450px; ">
+{{include}}
+</div>
+
+            <!-- socials -->
+				<div class="socials">
+					<div class="socials-inner">
+						<h3>WWE on Social Media</h3>
+						<ul>
+							<li><a href="https://www.facebook.com/wwe" target="_blank" class="facebook-ico"><span></span>Facebook</a></li>
+							<li><a href="https://twitter.com/wwe" target="_blank" class="twitter-ico"><span></span>Twitter</a></li>
+							<li><a href="https://plus.google.com/+WWE" target="_blank" class="rss-feed-ico"><span></span>Google+</a></li>
+							<li><a href="https://www.youtube.com/user/WWEFanNation" target="_blank" class="myspace-ico"><span></span>Youtube</a></li>
+						</ul>
+						<div class="cl">&nbsp;</div>
+					</div>
+				</div>
+				<!-- end of socials -->
+
+
+				<div id="footer">
+					<div class="footer-cols">
+						<div class="col">
+							<h2>Popular Stars</h2>
+							<ul>
+								<li><a href="{{=prefix_sd}}/8">John Cena</a></li>
+								<li><a href="{{=prefix_sd}}/1">Randy Orton</a></li>
+								<li><a href="{{=prefix_raw}}/4">Brock Lesnar</a></li>
+								<li><a href="{{=prefix_raw}}/15">Seth Rollins</a></li>
+							</ul>
+						</div>
+						<div class="col">
+							<h2>Current Champs</h2>
+							<ul>
+								<li><a href="{{=prefix_sd}}/2">AJ Styles</a></li>
+								<li><a href="{{=prefix_raw}}/9">Kewin Owens</a></li>
+								<li><a href="{{=prefix_raw}}/12">Roman Reigns</a></li>
+								<li><a href="{{=prefix_sd}}/10">The Miz</a></li>
+							</ul>
+						</div>
+						<div class="col">
+							<h2>Women's Division</h2>
+							<ul>
+								<li><a href="{{=prefix_sd}}/13">Niki Bella</a></li>
+								<li><a href="{{=prefix_raw}}/21">Charlotte Flair</a></li>
+								<li><a href="{{=prefix_raw}}/23">Sasha Banks </a></li>
+								<li><a href="{{=prefix_sd}}/16">Becky Lynch</a></li>
+							</ul>
+						</div>
+
+						<div class="col">
+							<h2>Future of WWE</h2>
+							<ul>
+								<li><a href="{{=prefix_nxt}}/5">Shinsuke Nakamura</a></li>
+								<li><a href="{{=prefix_nxt}}/4">Samoa Joe</a></li>
+								<li><a href="{{=prefix_nxt}}/2">Bobby Roode</a></li>
+								<li><a href="{{=prefix_nxt}}/8">Asuka</a></li>
+							</ul>
+						</div>
+						
+						<div class="cl">&nbsp;</div>
+					</div>
+					{{pass}}
+					
+					<!-- end of footer-cols -->
+					<div class="footer-bottom">
+						<nav class="footer-nav">
+							<ul><u style="color:#257D0C">Follow me on:</u> &nbsp;
+								<li><a href="https://tr.linkedin.com/in/mertcansusuz" target="_blank">Linkedin</a></li>
+								<li><a href="https://mertcansusuz.wordpress.com/" target="_blank">Wordpress</a></li>
+								<li><a href="https://twitter.com/mertcansusuz" target="_blank">Twitter</a></li>
+								<li><a href="https://github.com/mertcansusuz" target="_blank">Github</a></li>
+							</ul>
+						</nav>
+						<p class="copy"><strong>Designed by <a href="http://github.com/mertcansusuz" target="_blank">Delikanlı Mertcan Susuz</a></strong>
+						<span>|</span>
+						<strong>Thanks to <a href="http://chocotemplates.com" target="_blank">ChocoTemplates.com</a></strong></p>
+						<div class="cl">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+			<!-- end of container -->	
+		</div>
+		<!-- end of shell -->	
+	</div>
+	<!-- end of wrapper -->
+</body>
+</html>

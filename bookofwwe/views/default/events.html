@@ -1,0 +1,23 @@
+{{active="events"}}
+{{title = "Events"}}
+{{extend 'my_layout.html'}}
+
+
+{{ prefix = URL("static", "images2") + "/"  }}
+
+<h2 style="padding-left: 10px; padding-top:10px; "> <u>Events</u> </h2>
+
+{{for e in events:}}
+<div class = "event_box">
+<h3>
+
+  <a href='{{=URL("event", args=e.id)}}'>  <img src="{{=prefix}}{{=e['cover']}}">{{=e['name']}}</img>  </a>
+
+</h3>
+</div>
+
+{{pass}}
+
+
+
+

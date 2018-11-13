@@ -1,0 +1,21 @@
+{{active="events"}}
+{{title = "Events"}}
+{{extend 'my_layout.html'}}
+
+{{ prefix = URL("static", "images2") + "/"  }}
+
+
+<div class="abc">
+
+<img align="center" src = {{=prefix}}{{=event['cover']}}  >
+
+<h3><b> {{=event["name"]}} </b></h3>
+
+{{=event["description"]}}
+
+</div>
+
+{{pass}}
+
+
+
