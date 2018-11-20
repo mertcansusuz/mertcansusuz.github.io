@@ -173,7 +173,7 @@ svg text {
 	margin-top: 25px;
 	background: red;
 	width: auto;
-	height: 50px;
+	height: 20px;
 	text-align: center;
 	
 	font-family: 'Kodchasan';
@@ -182,5 +182,5 @@ svg text {
 }
 
 .footer h4 {
-	padding-top: 15px;
+	padding-top: 1px;
 }
