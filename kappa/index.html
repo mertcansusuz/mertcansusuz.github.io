@@ -1,170 +1,126 @@
-<!DOCTYPE html>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="n.css">
-
-	
-	
-	
-	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
+	<link rel="stylesheet" href="in.css">
 </head>
 
 <body>
 
-
-
-<div class="emotes">
-    <div id="emt"><a href="#deffs"><img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0"></a></div>
-    <div id="emt"><a href="#deffs"><img src="https://static-cdn.jtvnw.net/emoticons/v1/354/1.0"></a></div>
-    <div id="emt"><a href="#deffs"><img src="https://static-cdn.jtvnw.net/emoticons/v1/88/1.0"></a></div>
-
-    <div id="t1">Kappa</div>
-    <div id="t2">4Head</div>
-    <div id="t3">PogChamp</div>
-</div>
-
-
-
-
-	<div class="cont">
- 
-	<hr>
-	
-<svg>
-  <filter id='money'>
-    <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
-
-    <feOffset in='expand' dx='1' dy='1' result='shadow_1'/>
-    <feOffset in='expand' dx='2' dy='2' result='shadow_2'/>
-    <feOffset in='expand' dx='3' dy='3' result='shadow_3'/>
-    <feOffset in='expand' dx='4' dy='4' result='shadow_4'/>
-    <feOffset in='expand' dx='5' dy='5' result='shadow_5'/>
-    <feOffset in='expand' dx='6' dy='6' result='shadow_6'/>
-    <feOffset in='expand' dx='7' dy='7' result='shadow_7'/>
-
-    <feMerge result='shadow'>
-      <feMergeNode in='expand'/>
-      <feMergeNode in='shadow_1'/>
-      <feMergeNode in='shadow_2'/>
-      <feMergeNode in='shadow_3'/>
-      <feMergeNode in='shadow_4'/>
-      <feMergeNode in='shadow_5'/>
-      <feMergeNode in='shadow_6'/>
-      <feMergeNode in='shadow_7'/>
-    </feMerge>
-
-    <feFlood flood-color='#ebe7e0'/>
-    <feComposite in2='shadow' operator='in' result='shadow'/>
-
-    <feMorphology in='shadow' operator='dilate' radius='1' result='border'/>
-    <feFlood flood-color='#35322a' result='border_color'/>
-    <feComposite in2='border' operator='in' result='border'/>
-
-    <feOffset in='border' dx='1' dy='1' result='secondShadow_1'/>
-    <feOffset in='border' dx='2' dy='2' result='secondShadow_2'/>
-    <feOffset in='border' dx='3' dy='3' result='secondShadow_3'/>
-    <feOffset in='border' dx='4' dy='4' result='secondShadow_4'/>
-    <feOffset in='border' dx='5' dy='5' result='secondShadow_5'/>
-    <feOffset in='border' dx='6' dy='6' result='secondShadow_6'/>
-    <feOffset in='border' dx='7' dy='7' result='secondShadow_7'/>
-    <feOffset in='border' dx='8' dy='8' result='secondShadow_8'/>
-    <feOffset in='border' dx='9' dy='9' result='secondShadow_9'/>
-    <feOffset in='border' dx='10' dy='10' result='secondShadow_10'/>
-    <feOffset in='border' dx='11' dy='11' result='secondShadow_11'/>
-
-    <feMerge result='secondShadow'>
-      <feMergeNode in='border'/>
-      <feMergeNode in='secondShadow_1'/>
-      <feMergeNode in='secondShadow_2'/>
-      <feMergeNode in='secondShadow_3'/>
-      <feMergeNode in='secondShadow_4'/>
-      <feMergeNode in='secondShadow_5'/>
-      <feMergeNode in='secondShadow_6'/>
-      <feMergeNode in='secondShadow_7'/>
-      <feMergeNode in='secondShadow_8'/>
-      <feMergeNode in='secondShadow_9'/>
-      <feMergeNode in='secondShadow_10'/>
-      <feMergeNode in='secondShadow_11'/>
-    </feMerge>
-
-    <feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
-    <feComposite in2='secondShadow' operator='in' result='secondShadow'/>
-
-    <feMerge>
-      <feMergeNode in='secondShadow'/>
-      <feMergeNode in='border'/>
-      <feMergeNode in='shadow'/>
-      <feMergeNode in='SourceGraphic'/>
-    </feMerge>
-  </filter>
-
-  <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
-    Motto
-  </text>
-</svg>
-
-
-
-
-<div id="parc">
-    <header id="carta-encabezado"></header>
-    <section id="carta-contenido">
-      <div id="carta-mensaje">
-        <p><b>You're gonna live like a squirrel, brother</b></p>
-        <p>Like a squirrel, you will have no other purpose than to live!</p>
-        <p>Do not live for the past, or for the future. <br>You know why?
-		<b><br>Because water always finds its way. Be like water.</b></p>
-		<p>You will not worry about anything that has not been concluded, because<b> life is not where we come from.</b></p>
-		<p>You will not even fear death, because <b>death is bad for those who are left behind.</b> </p>
+	<nav>
+		<ul class="topnav" id="dropdownClick">
+		<li><a href="sub.html">Subartesi</a></li>
+		<li><a href="#box">Kappa</a></li>
+		<li><a href="#mov">Movement</a></li>
+		<li><a href="https://www.twitch.tv/jahrein">Twitch</a></li>
+		<li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+		</ul>
 		
-		<p>You are a person from the limitless possibility, and the universe is flowing.</p>
-		<p> As linear perceptions, we look through a small window at a certain time in this universe cycle.
-		<br><br><b>That window is your life <br><br>Enjoy.</b></p>
+	</nav>
+	
+	
+	<div class="container" id="sect-1">
+	  <div class="row">
+		
+			<svg>
+				  <filter id='money'>
+					<feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
 
-      </div>
-      <div id="carta-firma" style="text-align:right;color:#6f0d0d;font-size:15px;padding-left:79px;margin-bottom:0px;width:355px;"><b>- Jahrein</b></div></section>
-    <footer id="carta-footer" style="background-image:url(&quot;http://fotos.subefotos.com/57f6ea113ab8b27188c4f496543efb4fo.png&quot;); margin-top: -20px; color: rgb(62, 45, 45); text-align: right; padding: 53px 59px 0px 0px; padding-bottom: 40px; height: 46px; font-size: 13px;"><a href="https://www.youtube.com/watch?v=AdFVz9Aa2I4" style="text-decoration:none;font-size:20px;color:#6f0d0d;" onmouseover="this.style.color='red'" onmouseout="this.style.color='#6f0d0d'" alt="Mallister">source</a></footer><div style="clear:both;"></div>
-</div>
+					<feOffset in='expand' dx='1' dy='1' result='shadow_1'/>
+					<feOffset in='expand' dx='2' dy='2' result='shadow_2'/>
+					<feOffset in='expand' dx='3' dy='3' result='shadow_3'/>
+					<feOffset in='expand' dx='4' dy='4' result='shadow_4'/>
+					<feOffset in='expand' dx='5' dy='5' result='shadow_5'/>
+					<feOffset in='expand' dx='6' dy='6' result='shadow_6'/>
+					<feOffset in='expand' dx='7' dy='7' result='shadow_7'/>
 
-<hr>
+					<feMerge result='shadow'>
+					  <feMergeNode in='expand'/>
+					  <feMergeNode in='shadow_1'/>
+					  <feMergeNode in='shadow_2'/>
+					  <feMergeNode in='shadow_3'/>
+					  <feMergeNode in='shadow_4'/>
+					  <feMergeNode in='shadow_5'/>
+					  <feMergeNode in='shadow_6'/>
+					  <feMergeNode in='shadow_7'/>
+					</feMerge>
 
-<svg>
+					<feFlood flood-color='#ebe7e0'/>
+					<feComposite in2='shadow' operator='in' result='shadow'/>
+
+					<feMorphology in='shadow' operator='dilate' radius='1' result='border'/>
+					<feFlood flood-color='#35322a' result='border_color'/>
+					<feComposite in2='border' operator='in' result='border'/>
+
+					<feOffset in='border' dx='1' dy='1' result='secondShadow_1'/>
+					<feOffset in='border' dx='2' dy='2' result='secondShadow_2'/>
+					<feOffset in='border' dx='3' dy='3' result='secondShadow_3'/>
+					<feOffset in='border' dx='4' dy='4' result='secondShadow_4'/>
+					<feOffset in='border' dx='5' dy='5' result='secondShadow_5'/>
+					<feOffset in='border' dx='6' dy='6' result='secondShadow_6'/>
+					<feOffset in='border' dx='7' dy='7' result='secondShadow_7'/>
+					<feOffset in='border' dx='8' dy='8' result='secondShadow_8'/>
+					<feOffset in='border' dx='9' dy='9' result='secondShadow_9'/>
+					<feOffset in='border' dx='10' dy='10' result='secondShadow_10'/>
+					<feOffset in='border' dx='11' dy='11' result='secondShadow_11'/>
+
+					<feMerge result='secondShadow'>
+					  <feMergeNode in='border'/>
+					  <feMergeNode in='secondShadow_1'/>
+					  <feMergeNode in='secondShadow_2'/>
+					  <feMergeNode in='secondShadow_3'/>
+					  <feMergeNode in='secondShadow_4'/>
+					  <feMergeNode in='secondShadow_5'/>
+					  <feMergeNode in='secondShadow_6'/>
+					  <feMergeNode in='secondShadow_7'/>
+					  <feMergeNode in='secondShadow_8'/>
+					  <feMergeNode in='secondShadow_9'/>
+					  <feMergeNode in='secondShadow_10'/>
+					  <feMergeNode in='secondShadow_11'/>
+					</feMerge>
+
+					<feImage x='0' y='0' width='600' height='200' xlink:href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/stripes.svg'/>
+					<feComposite in2='secondShadow' operator='in' result='secondShadow'/>
+
+					<feMerge>
+					  <feMergeNode in='secondShadow'/>
+					  <feMergeNode in='border'/>
+					  <feMergeNode in='shadow'/>
+					  <feMergeNode in='SourceGraphic'/>
+					</feMerge>
+				  </filter>
+
+				  <text dominant-baseline='middle' text-anchor='middle' x='50%' y='50%'>
+					Motto
+				  </text>
+			</svg>
+			
+			
+			<div id="parc">
+				<header id="carta-encabezado"></header>
+				<section id="carta-contenido">
+				  <div id="carta-mensaje">
+					<p><b>You're gonna live like a squirrel, brother</b></p>
+					<p>Like a squirrel, you will have no other purpose than to live!</p>
+					<p>Do not live for the past, or for the future. <br>You know why?
+					<b><br>Because water always finds its way. Be like water.</b></p>
+					<p>You will not worry about anything that has not been concluded, because<b> life is not where we come from.</b></p>
+					<p>You will not even fear death, because <b>death is bad for those who are left behind.</b> </p>
+					
+					<p>You are a person from the limitless possibility, and the universe is flowing.</p>
+					<p> As linear perceptions, we look through a small window at a certain time in this universe cycle.
+					<br><br><b>That window is your life <br><br>Enjoy.</b></p>
+
+				  </div>
+				  <div id="carta-firma" style="text-align:right;color:#6f0d0d;font-size:15px;padding-left:79px;margin-bottom:0px;width:355px;"><b>- Jahrein</b></div></section>
+				<footer id="carta-footer" style="background-image:url(&quot;http://fotos.subefotos.com/57f6ea113ab8b27188c4f496543efb4fo.png&quot;); margin-top: -20px; color: rgb(62, 45, 45); text-align: right; padding: 53px 59px 0px 0px; padding-bottom: 40px; height: 46px; font-size: 13px;"><a href="https://www.youtube.com/watch?v=AdFVz9Aa2I4" style="text-decoration:none;font-size:20px;color:#6f0d0d;" onmouseover="this.style.color='red'" onmouseout="this.style.color='#6f0d0d'" alt="Mallister">source</a></footer><div style="clear:both;"></div>
+			</div>
+		
+	  </div>
+	</div>
+
+<hr>	
+	
+	<svg>
   <filter id='money'>
     <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
 
@@ -236,27 +192,46 @@ $(document).ready(function(){
     Kap4Champ
   </text>
 </svg>
-
-
-<div id="deffs">
-    <div id="c1"><h2>Kappa</h2><p>
-Kappa is a starting point for anyone trying to enter and understand Twitch and Twitch culture, according to Caldwell. The emote is based on former Justin.TV employee, Josh DeSeno, who was charged with setting up the chat client. People mainly use or spam Kappa as a way of carrying out a sarcastic reply to something happening on stream.</p>
-
-</div><div id="c2"><h2>4Head</h2><p>
-4head is pretty self-explanatory when it comes to visuals. It’s an emote based on a photo of League of Legends’ streamer Cadburry’s widely grinning face. The emote started to pick up in 2015. It’s a pretty wholesome meme, that is mostly used to express a reaction to a joke being made. The reaction can either be seen as an earnest response or sarcastic.</p>
-</div><div id="c3"><h2>PogChamp</h2>
-<p>PogChamp, one of the oldest emotes on Twitch, a professional Street Fighter player, and is mainly used to express surprise in response to something on stream. PogChamp is based on this video, but was given the name PogChamp because of a Mad Catz fight stick promo released in 2011 for a tournament that Gootecks was competing in.</p>
-</div>
-</div>
-
-
-
 	
-<hr>
-	
-	
+	<div class="container">
+	  <div class="row">
+	    <div class="col-4">
+		  <div class="box">
+		    <div class="icon">
+			  <img src="https://static-cdn.jtvnw.net/emoticons/v1/25/1.0">			
+			</div>
+			<label>Kappa</label>
+			<p>Kappa is a starting point for anyone trying to enter and understand Twitch and Twitch culture, according to Caldwell. The emote is based on former Justin.TV employee, Josh DeSeno, who was charged with setting up the chat client. People mainly use or spam Kappa as a way of carrying out a sarcastic reply to something happening on stream.</p>
+</p>
+		  </div>
+		</div>
+		
+		<div class="col-4">
+		  <div class="box">
+		    <div class="icon">
+			  <img src="https://static-cdn.jtvnw.net/emoticons/v1/354/1.0">			
+			</div>
+			<label>4head</label>
+			<p>4head is pretty self-explanatory when it comes to visuals. It’s an emote based on a photo of League of Legends’ streamer Cadburry’s widely grinning face. The emote started to pick up in 2015. It’s a pretty wholesome meme, that is mostly used to express a reaction to a joke being made. The reaction can either be seen as an earnest response or sarcastic.</p>
+</p>
+</p>
+		  </div>
+		</div>
+		
+		<div class="col-4">
+		  <div class="box">
+		    <div class="icon">
+			  <img src="https://static-cdn.jtvnw.net/emoticons/v1/88/1.0">			
+			</div>
+			<label>PogChamp</label>
+			<p>PogChamp, one of the oldest emotes, is based on Gootecks, a professional Street Fighter player, and is mainly used to express surprise in response to something happening on stream. PogChamp is based on <a style="text-decoration: none" href="https://www.youtube.com/watch?time_continue=3&v=kz4bmQeomF0">this video</a>, but was given the name PogChamp because of a Mad Catz fight stick promo released in 2011 for a tournament that Gootecks was competing in.</p>
+		  </div>
+		</div>
+	  </div>
 
-<svg>
+	  <hr>
+
+	  <svg>
   <filter id='money'>
     <feMorphology in='SourceGraphic' operator='dilate' radius='2' result='expand'/>
 
@@ -329,9 +304,7 @@ Kappa is a starting point for anyone trying to enter and understand Twitch and T
   </text>
 </svg>
 
-	
-
-  <div id="mov">
+<div id="mov">
     <img src="jh.png">
     <h3>
     Kap4Champ movement born in Turkey in November 2018. <br>On an award show, Jahrein, who wins the Best Male Streamer Award,<br> created the movement and made a call for his followers.</h3>
@@ -341,13 +314,31 @@ Kappa is a starting point for anyone trying to enter and understand Twitch and T
 
   </div>
 
-
-<div class="footer">
-  <h4><a href="https://www.twitch.tv/jahrein">twitch.tv/jahrein</a></h4>
+	  
+	  
+	</div>
+	
+	
+	<div class="footer">
+  <h4><a href="https://www.twitter.com/jahreindota">Twitter</a> - <a href="https://www.Instagram.com/jahrein">Instagram</a></h4>
   
 
 </div>
-
+	
+	
+	
+	<script>
+	function dropdownMenu() {
+		var x = document.getElementById("dropdownClick");
+		if (x.className === "topnav") {
+		  x.className += " responsive";
+		  }
+		else {
+		  x.className = "topnav";
+		 }
+	 }
+	</script>
+	
+	
 </body>
-
 </html>
